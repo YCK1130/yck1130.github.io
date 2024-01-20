@@ -1,9 +1,19 @@
 import Info from "../components/info";
+import "../styles/Profile.css";
 
-function Profile(props: { id?: string }) {
+interface Props {
+    id?: string;
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
+function Profile(props: Props) {
     return (
-        <div id={props.id} className="h-dvh w-dvw relative max-w-7xl min-w-80">
-            <div className="h-max p-5 flex justify-center content-center relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div
+            id={props.id}
+            className="min-h-dvh w-dvw relative max-w-7xl min-w-80 lagging-scroll"
+            onClick={props.onClick}
+        >
+            <div className="h-max p-5 flex justify-center content-center sticky top-1/2 -translate-y-1/2 left-1/2 ">
                 <Info />
             </div>
         </div>
