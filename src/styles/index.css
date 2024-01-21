@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
     @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
@@ -15,6 +15,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* -webkit-overflow-scrolling: touch; */
 }
 a {
     font-weight: 500;
@@ -44,7 +45,7 @@ h1 {
 }
 @media screen and (min-width: 720px) {
     p {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 }
 @media screen and (max-width: 720px) {
@@ -72,6 +73,7 @@ button {
     transition: border-color 0.25s;
 }
 button:hover {
+    @apply bg-gray-200 dark:bg-gray-700;
     border-color: #646cff;
 }
 button:focus,
@@ -83,4 +85,8 @@ button:focus-visible {
     a:hover {
         color: #747bff;
     }
+}
+
+.container {
+    padding: 0 2rem 2rem;
 }
