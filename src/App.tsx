@@ -38,7 +38,7 @@ function App() {
         });
     };
     useEffect(() => {
-        const handleScroll = (e: Event) => {
+        const handleScroll = () => {
             if (window.scrollY > window.screen.availHeight / 2) {
                 setBioButtVisible(false);
             } else {

@@ -18,7 +18,7 @@ export default function Info() {
                     className="rounded-card"
                     src="me-2024-crop.webp"
                     alt="me"
-                    onClick={(e) => {
+                    onClick={() => {
                         meImg.current?.classList.toggle("shake");
                         setTimeout(() => meImg.current?.classList.toggle("shake"), 550);
                     }}
