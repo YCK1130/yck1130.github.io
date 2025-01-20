@@ -1,4 +1,4 @@
-export var publications = [
+export const publications = [
     {
         imgSrc: "/assets/publication/DIFO.webp",
         alt: "DIFO",

@@ -20,7 +20,7 @@ export default function Project(props: Props) {
     const { isDark } = useTheme();
 
     function getValidLinks(props: Props) {
-        let links = [];
+        const links = [];
         for (let i = 0; i < props.links.length; i++) {
             links.push(
                 <a href={props.links[i].url} key={`${props.title}-links-${i}`}>
@@ -31,7 +31,7 @@ export default function Project(props: Props) {
         return links;
     }
     function renderLinks(props: Props) {
-        let elems = getValidLinks(props)
+        const elems = getValidLinks(props)
             .map((link, index) => {
                 if (index == 0) {
                     return (

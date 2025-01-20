@@ -15,11 +15,11 @@ interface Props {
 }
 export default function Paper(props: Props) {
     function parseAuthors(authors: string[]) {
-        let coauth = authors.some((author) => author.includes("*"));
+        const coauth = authors.some((author) => author.includes("*"));
 
-        let addLinks = authors.map((author, index) => {
-            let parsedName = author.replace(/#.*$/g, "").replace(/\*/g, "").trim();
-            let bold = parsedName.includes("Chun-Kai Yang");
+        const addLinks = authors.map((author, index) => {
+            const parsedName = author.replace(/#.*$/g, "").replace(/\*/g, "").trim();
+            const bold = parsedName.includes("Chun-Kai Yang");
 
             let elem = (
                 <p
@@ -63,7 +63,7 @@ export default function Paper(props: Props) {
         return addLinks.flat();
     }
     function getValidLinks(props: Props) {
-        let links = [];
+        const links = [];
         if (props.arxiv) {
             links.push(
                 <a href={props.arxiv} key={`${props.title}-links-arxiv`}>
