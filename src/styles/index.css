@@ -19,17 +19,18 @@
 }
 a {
     font-weight: 500;
-    color: #646cff;
+    color: #9ea3fc;
     text-decoration: inherit;
 }
 a:hover {
-    color: #535bf2;
+    color: #7e83df;
 }
 
 body {
-    margin: 0;
+    margin: 5dvh 22.5dvw 0 22.5dvw;
     display: flex;
-    place-items: center;
+
+    /* place-items: center; */
     min-width: 320px;
     min-height: 100dvh;
     scrollbar-width: none; /* Firefox */
@@ -40,25 +41,17 @@ body::-webkit-scrollbar {
     height: 0;
 }
 h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+    font-size: 2.2rem;
 }
-@media screen and (min-width: 720px) {
-    p {
-        font-size: 1em;
+@media screen and (max-width: 1250px) {
+    body {
+        margin: 5dvh 12.5dvw 0 12.5dvw;
     }
 }
-@media screen and (max-width: 720px) {
-    h1 {
-        font-size: 2em;
-    }
-}
-@media screen and (max-width: 400px) {
-    h1 {
-        font-size: 1.5em;
-    }
-    p {
-        font-size: 0.8em;
+
+@media screen and (max-width: 880px) {
+    body {
+        margin: 5dvh 7.5dvw 0 7.5dvw;
     }
 }
 button {
@@ -82,11 +75,14 @@ button:focus-visible {
 }
 
 @media (prefers-color-scheme: light) {
+    a {
+        color: #5058f8;
+    }
     a:hover {
-        color: #747bff;
+        color: #3e46e1;
     }
 }
 
 .container {
-    padding: 0 2rem 2rem;
+    margin: 0 2rem 2rem;
 }

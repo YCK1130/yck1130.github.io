@@ -13,14 +13,3 @@
 .logo:focus {
     scale: 1.05;
 }
-.logo.github:hover,
-.logo.github:focus {
-    filter: drop-shadow(0 0 50px #d8dce7e9);
-}
-
-@media (prefers-color-scheme: light) {
-    .logo.github:hover,
-    .logo.github:focus {
-        filter: drop-shadow(0 0 50px rgb(8 51 68));
-    }
-}

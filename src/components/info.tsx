@@ -1,44 +1,36 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
+import IconBar from "../components/iconBar";
+import bioString from "../contents/bio.md?raw";
+
+import Markdown from "react-markdown";
+import { parseMarkdown } from "../hooks/utils";
 import "../styles/card.css";
 export default function Info() {
-    const [isDark, setIsDark] = React.useState(false);
     const meImg = React.useRef<HTMLImageElement>(null);
-    useLayoutEffect(() => {
-        const dark = window.matchMedia("(prefers-color-scheme: dark)");
-        setIsDark(dark.matches);
-        dark.addEventListener("change", (e) => {
-            setIsDark(e.matches);
-        });
-    }, []);
     return (
-        <div className="flex flex-row gap-5">
-            <div className="card-container">
-                <img
-                    ref={meImg}
-                    className="rounded-card"
-                    src="me-2024-crop.webp"
-                    alt="me"
-                    onClick={() => {
-                        meImg.current?.classList.toggle("shake");
-                        setTimeout(() => meImg.current?.classList.toggle("shake"), 550);
-                    }}
-                />
+        <div className="flex flex-row container">
+            <div className="grid grid-cols-5 auto-rows-auto justify-items-center mr-5">
+                <div className="col-span-5 flex md:flex-row md:pt-2 flex-col p-0 justify-center items-center">
+                    <h1>{"楊竣凱"}</h1>
+                    <h1>{"Yang, Chun-Kai"}</h1>
+                </div>
+                <div className="col-span-5">
+                    <IconBar />
+                </div>
+                <div className="flex flex-col justify-center content-center col-span-5 mb-5">
+                    {parseMarkdown(bioString).map((line, index) => {
+                        if (line === "") return <br key={`bio-text-${index}`} />;
+                        return (
+                            <Markdown className="text-justify" key={`info-text-${index}`}>
+                                {line}
+                            </Markdown>
+                        );
+                    })}
+                </div>
             </div>
-            <div className="grid grid-cols-5 auto-rows-auto justify-items-center">
-                <h1 className="col-span-5 ">{"楊竣凱"}</h1>
-                <h1 className="col-span-5 ">{"Yang, Chun-Kai"}</h1>
-                <p className="col-span-5">Electrical Engineering, National Taiwan University</p>
-                <p className="col-span-5">
-                    Email: <a href="mailto:b10901027@ntu.edu.tw">b10901027@ntu.edu.tw</a>{" "}
-                </p>
-                <div className="col-span-2"></div>
-                <a href="https://github.com/YCK1130" target="_blank">
-                    <img
-                        className="logo size-9 github"
-                        src={`github-mark${isDark ? "-white" : ""}.svg`}
-                        alt="github"
-                    />
-                </a>
+            <div>
+                <img ref={meImg} className="rounded-card" src="me-2024-crop.webp" alt="me" />
+                <p className="col-span-5 text-sm mt-5">b10901027 [at] ntu.edu.tw</p>
             </div>
         </div>
     );

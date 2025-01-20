@@ -1,0 +1,9 @@
+.truncated {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* UnComment to activate hover link of project page */
+/* .truncated:has(.ellipsis).truncated:hover {
+    color: grey;
+} */
