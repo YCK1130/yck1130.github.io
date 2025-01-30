@@ -1,0 +1,58 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.toggle-checkbox-container {
+    position: relative;
+    padding: 5px;
+}
+
+.toggle-checkbox {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.toggle-checkbox + .toggle-label {
+    @apply bg-gray-600;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    border-radius: 34px;
+    transition: background-color 0.4s ease-in-out;
+    /* background-color: #283452; */
+    /* border: 2px solid; */
+}
+
+.toggle-checkbox + .toggle-label:before {
+    @apply bg-gray-600 shadow-inner shadow-lg;
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    top: 3px;
+    left: 4px;
+    transition: 0.4s;
+    background-size: 100% 100%;
+    /* background-color: #283452; */
+    /* background-color: rgb(255, 210, 8); */
+    background-image: url("/assets/icons/sun.png");
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    @apply bg-gray-600 shadow-inner shadow-lg;
+    /* background-color: rgb(229, 231, 235); */
+}
+
+.toggle-checkbox:checked + .toggle-label:before {
+    @apply bg-gray-600;
+    transform: translateX(100%);
+    /* background-color: rgb(229, 231, 235); */
+    background-image: url("/assets/icons/moon.png");
+}
+
+.toggle-label {
+    cursor: pointer;
+}

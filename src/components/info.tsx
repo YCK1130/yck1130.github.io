@@ -29,8 +29,13 @@ export default function Info() {
                 </div>
             </div>
             <div>
-                <img ref={meImg} className="rounded-card" src="me-2024-crop.webp" alt="me" />
-                <p className="col-span-5 text-sm mt-5">b10901027 [at] ntu.edu.tw</p>
+                <img
+                    ref={meImg}
+                    className="rounded-card hidden md:block"
+                    src="me-2024-crop.webp"
+                    alt="me"
+                />
+                <p className="col-span-5 text-sm mt-5 hidden md:block">b10901027 [at] ntu.edu.tw</p>
             </div>
         </div>
     );

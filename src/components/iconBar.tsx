@@ -2,7 +2,7 @@ import { useTheme } from "../hooks/theme";
 export default function IconBar() {
     const { isDark } = useTheme();
     return (
-        <div className="flex flex-row justify-around w-48">
+        <div className="flex flex-row justify-around w-48 z-0">
             <a href="https://github.com/YCK1130" target="_blank" rel="noopener noreferrer">
                 <img
                     className="logo size-9 github"

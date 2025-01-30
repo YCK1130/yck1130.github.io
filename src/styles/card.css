@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 .rounded-card {
-    @apply hidden md:block rounded-lg;
+    @apply rounded-lg;
     min-width: 192px;
     max-width: 192px;
     height: auto;

@@ -1,29 +1,25 @@
 import Info from "./components/info";
+import Navbar from "./components/Navbar";
+import { Toggle } from "./components/Toggle";
 import Footer from "./containers/Footer";
 import Projects from "./containers/Projects";
 import Publications from "./containers/Publications";
+import { useTheme } from "./hooks/theme";
 import "./styles/App.css";
-// type handleFastScrollEvent =
-//     | React.MouseEvent<HTMLElement>
-//     | React.TouchEvent<HTMLElement>
-//     | React.UIEvent<HTMLElement>;
-
 function App() {
-    // const touchStartY = useRef<number>(0);
-    // const [bioButtVisible, setBioButtVisible] = useState<boolean>(true);
-    // const scrollTo = (id: string) => {
-    //     window.scrollTo({
-    //         top: document.getElementById(id)!.offsetTop - 50,
-    //         behavior: "smooth",
-    //     });
-    // };
+    const { isDark, toggleTheme } = useTheme();
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center pt-5 bg-inherit">
+            <Navbar className="flex flex-row">
+                <Toggle
+                    isToggled={isDark}
+                    handleToggle={toggleTheme}
+                    className="justify-self-end w-min"
+                />
+            </Navbar>
             <Info />
-            {/* <Bio id="bio" /> */}
             <Publications />
             <Projects />
-            {/* <Project {...exampleProject} /> */}
             <Footer />
         </div>
     );
