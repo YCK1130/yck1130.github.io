@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Markdown from "react-markdown";
-import { useTheme } from "../hooks/theme";
+import { useTheme } from "../hooks/useTheme";
 import "../styles/truncated.css";
 import TruncatedText from "./TruncatedText";
 interface LinkProps {

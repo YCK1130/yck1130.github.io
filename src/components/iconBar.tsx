@@ -1,4 +1,4 @@
-import { useTheme } from "../hooks/theme";
+import { useTheme } from "../hooks/useTheme";
 export default function IconBar() {
     const { isDark } = useTheme();
     return (

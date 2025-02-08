@@ -4,7 +4,7 @@ import { Toggle } from "./components/Toggle";
 import Footer from "./containers/Footer";
 import Projects from "./containers/Projects";
 import Publications from "./containers/Publications";
-import { useTheme } from "./hooks/theme";
+import { useTheme } from "./hooks/useTheme";
 import "./styles/App.css";
 function App() {
     const { isDark, toggleTheme } = useTheme();
