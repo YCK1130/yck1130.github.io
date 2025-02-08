@@ -97,7 +97,6 @@ export default function Project(props: Props) {
         setIntroCanFold(result.truncated);
     }
     function onContribTruncated(result: { limit: number; truncated: boolean; length: number }) {
-        console.log(result, props.contribution.length);
         setContribCanFold(result.truncated || props.contribution.length > 1);
     }
 
