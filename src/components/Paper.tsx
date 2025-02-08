@@ -99,14 +99,15 @@ export default function Paper(props: Props) {
         <div
             id={props.id}
             className={
-                "grid gap-5 w-full rounded-lg dark:hover:bg-gray-200/10 " +
-                "hover:bg-gray-800/10 ease-in transition duration-150 py-5 px-5 " +
-                "md:grid-cols-7 max-md:grid-rows-2 "
+                "grid gap-5 w-full rounded-lg py-5 px-5 " +
+                "md:grid-cols-7 max-md:grid-rows-2 " +
+                "ease-in transition duration-150 "
+                // "dark:hover:bg-gray-200/10 hover:bg-gray-800/10" // hover effect
             }
             onClick={() => {
-                if (props.arxiv) window.open(props.arxiv, "_blank");
-                else if (props.projectPage) window.open(props.projectPage, "_blank");
-                else if (props.code) window.open(props.code, "_blank");
+                // if (props.arxiv) window.open(props.arxiv, "_blank");
+                // else if (props.projectPage) window.open(props.projectPage, "_blank");
+                // else if (props.code) window.open(props.code, "_blank");
             }}
         >
             <div className="flex flex-col justify-center content-center md:col-span-2 max-md:row-span-1 items-center">

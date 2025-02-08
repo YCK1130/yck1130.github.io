@@ -18,6 +18,10 @@
     }
 }
 
+.hoverBlock {
+    @apply px-2 rounded-lg dark:hover:bg-gray-200/10 hover:bg-gray-800/10 ease-in transition duration-150;
+}
+
 .shake {
     animation: shake 0.25s;
 }
