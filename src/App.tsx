@@ -9,8 +9,8 @@ import "./styles/App.css";
 function App() {
     const { isDark, toggleTheme } = useTheme();
     return (
-        <div className="flex flex-col justify-center items-center pt-5 bg-inherit">
-            <Navbar className="flex flex-row">
+        <div className="flex flex-col justify-center items-center pt-5 bg-inherit relative">
+            <Navbar>
                 <Toggle
                     isToggled={isDark}
                     handleToggle={toggleTheme}

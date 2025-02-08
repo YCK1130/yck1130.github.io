@@ -30,8 +30,8 @@ html:not([data-loaded]) {
 
 body {
     @apply: bg-inherit;
-    margin: min(5dvh, 70px) 22.5dvw 0 22.5dvw;
     display: flex;
+    margin: min(5dvh, 70px) 22.5dvw 0 22.5dvw;
 
     /* place-items: center; */
     min-width: 320px;
@@ -54,7 +54,8 @@ h1 {
 
 @media screen and (max-width: 880px) {
     body {
-        margin: min(5dvh, 70px) 7.5dvw 0 7.5dvw;
+        margin: min(5dvh, 70px) 0 0;
+        /* margin: min(5dvh, 70px) 7.5dvw 0 7.5dvw; */
     }
 }
 button {

@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 const useScrollDirection = (threshold: number | number[] = 10) => {
     const [scrollDirection, setScrollDirection] = useState("up");
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | undefined>(undefined);
+    // const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | undefined>(undefined);
 
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
         let delay = 200;
-        // Ignore very small scroll movements (below the threshold)
+        // Ignore movements below the threshold
         if (Array.isArray(threshold)) {
             const [up, down] = threshold;
             if (currentScrollY < lastScrollY - up) {
@@ -22,18 +22,10 @@ const useScrollDirection = (threshold: number | number[] = 10) => {
             if (Math.abs(currentScrollY - lastScrollY) < threshold) return;
         }
 
-        // Determine scroll direction
         const newDirection = currentScrollY > lastScrollY ? "down" : "up";
 
-        // Only update direction if it has changed
-        if (newDirection !== scrollDirection) {
-            clearTimeout(debounceTimeout);
-            const timeout = setTimeout(() => {
-                setScrollDirection(newDirection);
-            }, delay); // Delay for smoother behavior
-            setDebounceTimeout(timeout);
-        }
-
+        // Note: debounce is not used here, as it causes a delay in updating the scroll direction
+        setScrollDirection(newDirection);
         setLastScrollY(currentScrollY);
     };
 
@@ -41,9 +33,8 @@ const useScrollDirection = (threshold: number | number[] = 10) => {
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            clearTimeout(debounceTimeout);
         };
-    }, [lastScrollY, scrollDirection, debounceTimeout]);
+    }, [lastScrollY, scrollDirection]);
 
     return scrollDirection;
 };

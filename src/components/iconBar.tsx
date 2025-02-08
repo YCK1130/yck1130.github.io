@@ -2,10 +2,10 @@ import { useTheme } from "../hooks/theme";
 export default function IconBar() {
     const { isDark } = useTheme();
     return (
-        <div className="flex flex-row justify-around w-48 z-0">
+        <div className="relative flex flex-row justify-around w-48 z-10 max-md:py-5">
             <a href="https://github.com/YCK1130" target="_blank" rel="noopener noreferrer">
                 <img
-                    className="logo size-9 github"
+                    className="logo size-9"
                     src={`github-mark-${isDark ? "white" : "black"}.svg`}
                     alt="github"
                 />
@@ -15,11 +15,11 @@ export default function IconBar() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <img className="logo size-9 github" src={`linkedin.png`} alt="linkedin" />
+                <img className="logo size-9" src={`linkedin.png`} alt="linkedin" />
             </a>
             <a href="/assets/cv.pdf" target="_blank" rel="noopener noreferrer">
                 <img
-                    className="logo size-9 github"
+                    className="logo size-9"
                     src={`docs-${isDark ? "white" : "black"}.png`}
                     alt="cv"
                 />

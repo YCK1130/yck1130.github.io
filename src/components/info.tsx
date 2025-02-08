@@ -9,12 +9,12 @@ export default function Info() {
     const meImg = React.useRef<HTMLImageElement>(null);
     return (
         <div className="flex flex-row container">
-            <div className="grid grid-cols-5 auto-rows-auto justify-items-center mr-5">
+            <div className="grid grid-cols-5 auto-rows-auto justify-items-center px-5">
                 <div className="col-span-5 flex md:flex-row md:pt-2 flex-col p-0 justify-center items-center">
                     <h1>{"楊竣凱"}</h1>
                     <h1>{"Yang, Chun-Kai"}</h1>
                 </div>
-                <div className="col-span-5">
+                <div className="col-span-5 relative">
                     <IconBar />
                 </div>
                 <div className="flex flex-col justify-center content-center col-span-5 mb-5">

@@ -99,8 +99,9 @@ export default function Paper(props: Props) {
         <div
             id={props.id}
             className={
-                "grid grid-cols-7 gap-5 w-full rounded-lg dark:hover:bg-gray-200/10 " +
-                "hover:bg-gray-800/10 ease-in transition duration-150 py-5 pr-5"
+                "grid gap-5 w-full rounded-lg dark:hover:bg-gray-200/10 " +
+                "hover:bg-gray-800/10 ease-in transition duration-150 py-5 px-5 " +
+                "md:grid-cols-7 max-md:grid-rows-2 "
             }
             onClick={() => {
                 if (props.arxiv) window.open(props.arxiv, "_blank");
@@ -108,7 +109,7 @@ export default function Paper(props: Props) {
                 else if (props.code) window.open(props.code, "_blank");
             }}
         >
-            <div className="flex flex-col justify-center content-center col-span-2 items-center">
+            <div className="flex flex-col justify-center content-center md:col-span-2 max-md:row-span-1 items-center">
                 <img
                     className="rounded-lg"
                     style={{
@@ -122,12 +123,12 @@ export default function Paper(props: Props) {
                     alt={props.alt}
                 />
             </div>
-            <div className="col-span-5 text-left">
+            <div className="md:col-span-5 max-md:row-span-1 text-left">
                 <div className="place-content-start">
                     <div className="font-bold text-lg">{props.title}</div>
                     <div className="text-sm">{parseAuthors(props.authors)}</div>
                 </div>
-                <div className="pb-2">
+                <div className="p b-2">
                     <div className="italic inline text-sm">{props.venue}</div>
                     {props.special && (
                         <div className="inline font-bold text-sm">{` (${props.special})`}</div>
