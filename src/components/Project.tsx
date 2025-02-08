@@ -148,7 +148,7 @@ export default function Project(props: Props) {
                             className={
                                 "col-span-1 text-base truncated " +
                                 "flex flex-row-reverse items-center rounded-lg " +
-                                (introExpanded ? "opacity-25 group-hover:opacity-100" : "invisible")
+                                (introCanFold ? "opacity-25 group-hover:opacity-100" : "invisible")
                             }
                         >
                             <span className="ml-1">{!introExpanded ? "▲" : "▼"}</span>
