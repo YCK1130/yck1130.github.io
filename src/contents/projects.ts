@@ -27,4 +27,26 @@ export const projects = [
         ],
         // special: "Special",
     },
+    {
+        id: "GoogleHPS-Fire_Guardian",
+        imgSrc: "/assets/projects/googlehps.webp",
+        alt: "GoogleHPS-Fire_Guardian",
+        projectName: "Fire Guardian",
+        title: "Google 2023 Hardware Product Sprint",
+        intro:
+            "Developed an embedded fire monitoring system with real-time alerts, a Node-RED dashboard, and an MQTT-based sensor network." +
+            "Implemented a routing algorithm, a multi-stage LED guidance system, and a UPS for reliability.",
+        contribution: [
+            "Designed and built the full-stack monitoring website for real-time fire alerts.",
+            "Developed MQTT-based device communication and RPi server management.",
+            "Implemented an efficient routing algorithm for emergency guidance.",
+        ],
+        links: [
+            {
+                name: "YouTube",
+                url: "https://youtu.be/n4am_cvueJw",
+            },
+        ],
+        // special: "Special",
+    },
 ];

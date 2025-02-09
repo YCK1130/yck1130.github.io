@@ -25,7 +25,7 @@ export default function Paper(props: Props) {
             let elem = (
                 <p
                     key={`${props.title}-auth-${index}`}
-                    className={`inline${bold ? " font-bold" : ""}`}
+                    className={`inline ${bold ? "font-semibold" : ""}`}
                 >
                     {author}
                 </p>
@@ -119,7 +119,7 @@ export default function Paper(props: Props) {
             </div>
             <div className="md:col-span-5 max-md:row-span-1 text-left">
                 <div className="place-content-start">
-                    <div className="font-bold text-lg">{props.title}</div>
+                    <div className="text-lg">{props.title}</div>
                     <div className="text-sm">{parseAuthors(props.authors)}</div>
                 </div>
                 <div className="p b-2">
