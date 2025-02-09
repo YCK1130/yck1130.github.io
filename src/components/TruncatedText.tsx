@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { memo, useCallback, useLayoutEffect, useRef, useState } from "react";
 
 interface TruncatedTextProps {
     text: string;
@@ -6,6 +6,7 @@ interface TruncatedTextProps {
     font?: string; // 如 "16px Arial"
     onTruncate?: (result: { limit: number; truncated: boolean; length: number }) => void;
     margin?: number;
+    controlLimit?: number;
 }
 
 const TruncatedText = ({
@@ -14,6 +15,7 @@ const TruncatedText = ({
     font,
     onTruncate,
     margin = 5,
+    controlLimit = 0,
 }: TruncatedTextProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [limit, setLimit] = useState(text.length);
@@ -51,7 +53,12 @@ const TruncatedText = ({
                     width += context.measureText(text[count]).width;
                     count++;
                 }
-                setLimit(count < text.length ? count - 5 : count);
+                if (controlLimit != 0 && controlLimit < count) {
+                    count = controlLimit;
+                } else {
+                    count = count < text.length ? count - 10 : count;
+                }
+                setLimit(count);
                 if (onTruncate) {
                     onTruncate({
                         limit: count,
@@ -75,11 +82,11 @@ const TruncatedText = ({
         <div
             ref={containerRef}
             className={className + " w-full"}
-            style={{ whiteSpace: "nowrap", overflow: "hidden" }}
+            // style={{ whiteSpace: "nowrap", overflow: "hidden" }}
         >
             {limit < text.length ? truncateText(text, limit) : text}
         </div>
     );
 };
 
-export default TruncatedText;
+export default memo(TruncatedText);

@@ -1,10 +1,9 @@
 import React from "react";
 import IconBar from "../components/iconBar";
 import bioString from "../contents/bio.md?raw";
-
-import Markdown from "react-markdown";
 import { parseMarkdown } from "../hooks/utils";
 import "../styles/card.css";
+import Markdown from "./Markdown";
 export default function Info() {
     const meImg = React.useRef<HTMLImageElement>(null);
     return (

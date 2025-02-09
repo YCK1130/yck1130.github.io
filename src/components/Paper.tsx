@@ -1,4 +1,5 @@
 import { authorLinks } from "../contents/authorLinks";
+import { NewTabLink } from "./Markdown";
 interface Props {
     id?: string;
     imgSrc?: string;
@@ -31,16 +32,14 @@ export default function Paper(props: Props) {
             );
             if (authorLinks[parsedName]) {
                 elem = (
-                    <a
+                    <NewTabLink
                         key={`${props.title}-auth-${index}-link`}
                         href={authorLinks[parsedName]}
                         className="inline"
-                        target="_blank"
-                        rel="noopener noreferrer"
                     >
                         {" "}
                         {author}
-                    </a>
+                    </NewTabLink>
                 );
             }
             if (index == 0) {
@@ -66,30 +65,30 @@ export default function Paper(props: Props) {
         const links = [];
         if (props.arxiv) {
             links.push(
-                <a href={props.arxiv} key={`${props.title}-links-arxiv`}>
+                <NewTabLink href={props.arxiv} key={`${props.title}-links-arxiv`}>
                     arXiv
-                </a>
+                </NewTabLink>
             );
         }
         if (props.projectPage) {
             links.push(
-                <a href={props.projectPage} key={`${props.title}-links-ppage`}>
+                <NewTabLink href={props.projectPage} key={`${props.title}-links-ppage`}>
                     Project Page
-                </a>
+                </NewTabLink>
             );
         }
         if (props.code) {
             links.push(
-                <a href={props.code} key={`${props.title}-links-Code`}>
+                <NewTabLink href={props.code} key={`${props.title}-links-Code`}>
                     Code
-                </a>
+                </NewTabLink>
             );
         }
         if (props.paper) {
             links.push(
-                <a href={props.paper} key={`${props.title}-links-paper`}>
+                <NewTabLink href={props.paper} key={`${props.title}-links-paper`}>
                     Paper
-                </a>
+                </NewTabLink>
             );
         }
         return links;

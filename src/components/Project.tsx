@@ -1,7 +1,8 @@
-import { useState } from "react";
-import Markdown from "react-markdown";
+import { useCallback, useState } from "react";
 import { useTheme } from "../hooks/useTheme";
+import { parseMarkdown } from "../hooks/utils";
 import "../styles/truncated.css";
+import Markdown, { NewTabLink } from "./Markdown";
 import TruncatedText from "./TruncatedText";
 interface LinkProps {
     name: string;
@@ -23,6 +24,8 @@ export default function Project(props: Props) {
     const { isDark } = useTheme();
     const [introCanFold, setIntroCanFold] = useState(false);
     const [contribCanFold, setContribCanFold] = useState(false);
+    const [introLimit, setIntroLimit] = useState(0);
+    const [contribLimit, setContribLimit] = useState(0);
     const [introExpanded, setIntroExpanded] = useState(false);
     const [contribExpanded, setContribExpanded] = useState(false);
 
@@ -30,9 +33,9 @@ export default function Project(props: Props) {
         const links = [];
         for (let i = 0; i < props.links.length; i++) {
             links.push(
-                <a href={props.links[i].url} key={`${props.title}-links-${i}`}>
+                <NewTabLink href={props.links[i].url} key={`${props.title}-links-${i}`}>
                     {props.links[i].name}
-                </a>
+                </NewTabLink>
             );
         }
         return links;
@@ -61,23 +64,23 @@ export default function Project(props: Props) {
         for (let i = 0; i < props.links.length; i++) {
             if (props.links[i].name === "YouTube") {
                 elems[2 * i] = (
-                    <a href={props.links[i].url} key={`${props.title}-link-${i}`}>
+                    <NewTabLink href={props.links[i].url} key={`${props.title}-link-${i}`}>
                         <img
                             className="logo size-6 youtube"
                             src={`youtube-${isDark ? "white" : "black"}.png`}
                             alt="youtube"
                         />
-                    </a>
+                    </NewTabLink>
                 );
             } else if (props.links[i].name === "GitHub") {
                 elems[2 * i] = (
-                    <a href={props.links[i].url} key={`${props.title}-link-${i}`}>
+                    <NewTabLink href={props.links[i].url} key={`${props.title}-link-${i}`}>
                         <img
                             className="logo size-5 github"
                             src={`github-mark-${isDark ? "white" : "black"}.svg`}
                             alt="github"
                         />
-                    </a>
+                    </NewTabLink>
                 );
             }
         }
@@ -93,19 +96,26 @@ export default function Project(props: Props) {
         setContribExpanded(!contribExpanded);
     }
 
-    function onIntroTruncated(result: { limit: number; truncated: boolean; length: number }) {
-        setIntroCanFold(result.truncated);
-    }
-    function onContribTruncated(result: { limit: number; truncated: boolean; length: number }) {
-        setContribCanFold(result.truncated || props.contribution.length > 1);
-    }
-
+    const onIntroTruncated = useCallback(
+        (result: { limit: number; truncated: boolean; length: number }) => {
+            setIntroCanFold(result.truncated);
+            setIntroLimit(result.limit);
+        },
+        [setIntroCanFold, setIntroLimit]
+    );
+    const onContribTruncated = useCallback(
+        (result: { limit: number; truncated: boolean; length: number }) => {
+            setContribCanFold(result.truncated || props.contribution.length > 1);
+            setContribLimit(result.limit);
+        },
+        [setContribCanFold, setContribLimit, props.contribution]
+    );
     return (
         <div
             id={props.id}
-            className="grid gap-5 w-full rounded-lg py-5 px-5 md:grid-cols-7 max-md:grid-rows-2"
+            className="flex w-full rounded-lg py-5 px-5 md:gap-5 max-md:flex-col md:flex-row"
         >
-            <div className="flex flex-col justify-center content-center md:col-span-2 max-md:row-span-1 items-center">
+            <div className="flex flex-col justify-center content-center items-center md:w-[38%]">
                 <img
                     className="rounded-lg"
                     style={{
@@ -119,7 +129,7 @@ export default function Project(props: Props) {
                     alt={props.alt}
                 />
             </div>
-            <div className="md:col-span-5 max-md:row-span-1 text-left w-full">
+            <div className="text-left w-full">
                 <div className="place-content-start pt-2 px-2">
                     <div className="font-bold text-2xl inline">{props.projectName}</div>
                     {props.special && (
@@ -146,18 +156,29 @@ export default function Project(props: Props) {
                         <div className="font-bold text-xl col-span-1">{"Introduction"}</div>
                         <div
                             className={
-                                "col-span-1 text-base truncated " +
+                                "col-span-1 text-base " +
                                 "flex flex-row-reverse items-center rounded-lg " +
                                 (introCanFold ? "opacity-25 group-hover:opacity-100" : "invisible")
                             }
                         >
-                            <span className="ml-1">{!introExpanded ? "▲" : "▼"}</span>
+                            <span className="ml-1 select-none">{!introExpanded ? "▲" : "▼"}</span>
                         </div>
                     </div>
                     {introExpanded ? (
-                        <Markdown className="text-base">{props.intro}</Markdown>
+                        parseMarkdown(props.intro).map((line, index) => {
+                            if (line === "") return <br key={`${props.id}-text-${index}`} />;
+                            return (
+                                <Markdown className="text-base" key={`${props.id}-intro-${index}`}>
+                                    {line}
+                                </Markdown>
+                            );
+                        })
                     ) : (
-                        <TruncatedText text={props.intro} onTruncate={onIntroTruncated} />
+                        <TruncatedText
+                            text={props.intro}
+                            onTruncate={onIntroTruncated}
+                            controlLimit={introLimit}
+                        />
                     )}
                 </div>
                 <div
@@ -170,21 +191,36 @@ export default function Project(props: Props) {
                         <div className="font-bold text-xl">{"Contribution"}</div>
                         <div
                             className={
-                                "col-span-1 text-base truncated " +
+                                "col-span-1 text-base " +
                                 "flex flex-row-reverse items-center rounded-lg " +
                                 (contribCanFold
                                     ? "opacity-25 group-hover:opacity-100"
                                     : "invisible")
                             }
                         >
-                            <span className={"ml-1"}>{!contribExpanded ? "▲" : "▼"}</span>
+                            <span className="ml-1 select-none">{!contribExpanded ? "▲" : "▼"}</span>
                         </div>
                     </div>
                     <ul className="list-disc pl-5">
                         {contribExpanded ? (
                             props.contribution.map((c, index) => (
                                 <li key={`${props.id}-contrib-${index}`}>
-                                    <Markdown className="text-base">{c}</Markdown>
+                                    {parseMarkdown(c).map((line, idx) => {
+                                        if (line === "")
+                                            return (
+                                                <br
+                                                    key={`${props.id}-contrib-text-${index}-${idx}`}
+                                                />
+                                            );
+                                        return (
+                                            <Markdown
+                                                className="text-base"
+                                                key={`${props.id}-contrib-${index}-${idx}`}
+                                            >
+                                                {line}
+                                            </Markdown>
+                                        );
+                                    })}
                                 </li>
                             ))
                         ) : (
@@ -192,6 +228,7 @@ export default function Project(props: Props) {
                                 <TruncatedText
                                     text={props.contribution[0]}
                                     onTruncate={onContribTruncated}
+                                    controlLimit={contribLimit}
                                 />
                             </li>
                         )}
