@@ -1,5 +1,5 @@
 import Divider from "../components/divider.tsx";
-import Paper from "../components/Paper.tsx";
+import Paper from "../components/paper";
 import { publications } from "../contents/pubs.ts";
 function Publications() {
     return (

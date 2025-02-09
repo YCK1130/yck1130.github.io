@@ -1,5 +1,5 @@
 import Divider from "../components/divider.tsx";
-import Project from "../components/project/Project.tsx";
+import Project from "../components/project";
 import { projects } from "../contents/projects.ts";
 function Projects() {
     return (
