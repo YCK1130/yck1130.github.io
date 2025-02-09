@@ -161,7 +161,7 @@ export default function Project(props: Props) {
                                 (introCanFold ? "opacity-25 group-hover:opacity-100" : "invisible")
                             }
                         >
-                            <span className="ml-1 select-none">{!introExpanded ? "▲" : "▼"}</span>
+                            <span className="ml-1 select-none">{introExpanded ? "▲" : "▼"}</span>
                         </div>
                     </div>
                     {introExpanded ? (
@@ -198,7 +198,7 @@ export default function Project(props: Props) {
                                     : "invisible")
                             }
                         >
-                            <span className="ml-1 select-none">{!contribExpanded ? "▲" : "▼"}</span>
+                            <span className="ml-1 select-none">{contribExpanded ? "▲" : "▼"}</span>
                         </div>
                     </div>
                     <ul className="list-disc pl-5">
