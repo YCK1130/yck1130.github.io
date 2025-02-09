@@ -10,12 +10,8 @@ function App() {
     const { isDark, toggleTheme } = useTheme();
     return (
         <div className="flex flex-col justify-center items-center pt-5 bg-inherit relative">
-            <Navbar>
-                <Toggle
-                    isToggled={isDark}
-                    handleToggle={toggleTheme}
-                    className="justify-self-end w-min"
-                />
+            <Navbar className="flex">
+                <Toggle isToggled={isDark} handleToggle={toggleTheme} className="ml-auto w-min" />
             </Navbar>
             <Info />
             <Publications />
