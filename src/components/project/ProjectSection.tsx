@@ -1,5 +1,4 @@
 import Triangle from "../Triangle";
-
 export interface ProjectSectionProps {
     title: string;
     expanded: boolean;
@@ -17,11 +16,13 @@ export function ProjectSection({
 }: ProjectSectionProps) {
     return (
         <div
-            className={`col-span-5 text-justify py-2 group ${canFold ? "hoverBlock" : "px-2"}`}
+            className={`col-span-5 text-justify py-2 group ${
+                canFold && !expanded ? "hoverBlock" : "px-2"
+            }`}
             onClick={toggle}
         >
-            <div className="grid grid-cols-2">
-                <div className="text-xl col-span-1">{title}</div>
+            <div className={"grid grid-cols-2"}>
+                <div className="text-xl col-span-1 select-none">{title}</div>
                 <Triangle
                     up={expanded}
                     className={
@@ -30,7 +31,7 @@ export function ProjectSection({
                     }
                 />
             </div>
-            {children}
+            <div onClick={(e) => !expanded || e.stopPropagation()}>{children}</div>
         </div>
     );
 }

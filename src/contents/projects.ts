@@ -34,7 +34,7 @@ export const projects = [
         projectName: "Fire Guardian",
         title: "Google 2023 Hardware Product Sprint",
         intro:
-            "Developed an embedded fire monitoring system with real-time alerts, a Node-RED dashboard, and an MQTT-based sensor network." +
+            "Developed an embedded fire monitoring system with real-time alerts, a Node-RED dashboard, and an MQTT-based sensor network. " +
             "Implemented a routing algorithm, a multi-stage LED guidance system, and a UPS for reliability.",
         contribution: [
             "Designed and built the full-stack monitoring website for real-time fire alerts.",
