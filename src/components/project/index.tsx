@@ -69,9 +69,9 @@ export default function Project(props: ProjectProps) {
                     <ul className="list-disc pl-5">
                         {contribExpanded ? (
                             props.contribution.map((c, idx) => (
-                                <li>
+                                <li key={`${props.projectName}-contrib-${idx}-li`}>
                                     <Paragraph
-                                        key={idx}
+                                        key={`${props.projectName}-contrib-${idx}-p`}
                                         className="text-base"
                                         id={`${props.projectName}-contrib-${idx}`}
                                     >
