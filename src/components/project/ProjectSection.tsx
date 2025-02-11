@@ -16,12 +16,16 @@ export function ProjectSection({
 }: ProjectSectionProps) {
     return (
         <div
-            className={`col-span-5 text-justify py-2 group ${
-                canFold && !expanded ? "hoverBlock" : "px-2"
+            className={`col-span-5 text-justify group ${
+                canFold && !expanded ? "hoverBlock px-0" : ""
             }`}
             onClick={toggle}
         >
-            <div className={"grid grid-cols-2"}>
+            <div
+                className={
+                    "grid grid-cols-2 pt-2 px-2 " + (canFold && expanded ? "hoverBlock" : "")
+                }
+            >
                 <div className="text-xl col-span-1 select-none">{title}</div>
                 <Triangle
                     up={expanded}
@@ -31,7 +35,9 @@ export function ProjectSection({
                     }
                 />
             </div>
-            <div onClick={(e) => !expanded || e.stopPropagation()}>{children}</div>
+            <div onClick={(e) => !expanded || e.stopPropagation()} className="pb-2 px-2">
+                {children}
+            </div>
         </div>
     );
 }
