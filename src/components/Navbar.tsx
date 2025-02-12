@@ -10,7 +10,6 @@ interface NavbarProps {
 
 const Navbar = (props: NavbarProps) => {
     const { scrollDirection, lastScrollY } = useScrollDirection([10, 50]);
-    console.log(scrollDirection, lastScrollY);
     return (
         <motion.div
             className={
