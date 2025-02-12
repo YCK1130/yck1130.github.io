@@ -31,7 +31,7 @@ html:not([data-loaded]) {
 body {
     @apply: bg-inherit;
     display: flex;
-    margin: max(5dvh, 70px) 0 0 0;
+    margin: max(5dvh, 65px) 0 0 0;
     /* place-items: center; */
     justify-content: center;
     min-width: 320px;
@@ -67,7 +67,7 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 a {
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: inherit;
     color: #5058f8;
 }
@@ -88,9 +88,4 @@ a:hover {
     button:hover {
         @apply bg-gray-700;
     }
-}
-
-.container {
-    @apply: bg-inherit;
-    margin: 0 2rem 2rem;
 }

@@ -6,6 +6,7 @@ export default {
         extend: {
             boxShadow: {
                 inner: "inset 0 2px 6px 0 rgba(0, 0, 0, 0.3)",
+                "inner-sm": "inset 0 1px 4px 0 rgba(0, 0, 0, 0.3)",
             },
         },
     },

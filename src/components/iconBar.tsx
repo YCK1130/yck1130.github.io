@@ -12,7 +12,11 @@ export default function IconBar() {
                 />
             </NewTabLink>
             <NewTabLink href="https://www.linkedin.com/in/yang-chun-kai/">
-                <img className="logo size-9" src={`linkedin.png`} alt="linkedin" />
+                <img
+                    className="logo size-9"
+                    src={`linkedin${isDark ? "" : "-black"}.png`}
+                    alt="linkedin"
+                />
             </NewTabLink>
             <NewTabLink href="/assets/cv.pdf">
                 <img

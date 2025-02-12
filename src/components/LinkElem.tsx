@@ -18,11 +18,7 @@ export const LinkElem = React.memo(
         let content: React.ReactNode = link.name;
         if (link.name === "YouTube") {
             content = (
-                <img
-                    className="logo size-6 youtube"
-                    src={`youtube-${isDark ? "white" : "black"}.png`}
-                    alt="youtube"
-                />
+                <img className="logo size-6 youtube" src={`youtube-white.png`} alt="youtube" />
             );
         } else if (link.name === "GitHub") {
             content = (

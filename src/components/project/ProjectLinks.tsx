@@ -12,7 +12,7 @@ export function ProjectLinks({ links, title, isDark }: ProjectLinksProps) {
         <>
             {links.map((link, index) => (
                 <React.Fragment key={index}>
-                    {index > 0 && " / "}
+                    {index > 0 && " | "}
                     <span>
                         <LinkElem link={link} index={index} isDark={isDark} title={title} />
                     </span>

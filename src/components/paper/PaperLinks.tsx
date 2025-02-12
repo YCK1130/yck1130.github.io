@@ -9,24 +9,25 @@ interface PaperLinksProps {
 }
 
 export function PaperLinks({ arxiv, projectPage, code, paper, className }: PaperLinksProps) {
+    const divider = " / ";
     return (
-        <div className={"flex text-sm " + (className ? className : "")}>
+        <div className={"flex flex-row " + (className ? className : "")}>
             {arxiv && <NewTabLink href={arxiv}>arXiv</NewTabLink>}
             {projectPage && (
                 <>
-                    {arxiv && " / "}
+                    {arxiv && divider}
                     <NewTabLink href={projectPage}>Project Page</NewTabLink>
                 </>
             )}
             {code && (
                 <>
-                    {(arxiv || projectPage) && " / "}
+                    {(arxiv || projectPage) && divider}
                     <NewTabLink href={code}>Code</NewTabLink>
                 </>
             )}
             {paper && (
                 <>
-                    {(arxiv || projectPage || code) && " / "}
+                    {(arxiv || projectPage || code) && divider}
                     <NewTabLink href={paper}>Paper</NewTabLink>
                 </>
             )}

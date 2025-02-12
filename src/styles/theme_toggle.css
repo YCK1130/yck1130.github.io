@@ -14,19 +14,18 @@
 }
 
 .toggle-checkbox + .toggle-label {
-    @apply bg-gray-600;
+    @apply shadow-inner-sm;
+    background-color: #ced2daff;
     position: relative;
     display: inline-block;
     width: 60px;
     height: 32px;
     border-radius: 34px;
     transition: background-color 0.4s ease-in-out;
-    /* background-color: #283452; */
-    /* border: 2px solid; */
 }
 
 .toggle-checkbox + .toggle-label:before {
-    @apply bg-gray-600 shadow-inner shadow-lg;
+    background-color: #ced2daff;
     content: "";
     position: absolute;
     width: 26px;
@@ -36,13 +35,11 @@
     left: 4px;
     transition: 0.4s;
     background-size: 100% 100%;
-    /* background-color: #283452; */
-    /* background-color: rgb(255, 210, 8); */
     background-image: url("/assets/icons/sun.png");
 }
 
 .toggle-checkbox:checked + .toggle-label {
-    @apply bg-gray-600 shadow-inner shadow-lg;
+    @apply bg-gray-600 shadow-inner-sm;
     /* background-color: rgb(229, 231, 235); */
 }
 

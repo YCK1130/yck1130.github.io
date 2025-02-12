@@ -27,17 +27,19 @@ export default function Paper(props: PaperProps) {
             <PaperImage imgSrc={props.imgSrc} alt={props.alt} />
             <div className="md:col-span-5 max-md:row-span-1 text-left">
                 <div className="place-content-start">
-                    <div className="text-lg">{props.title}</div>
+                    <div className="text-xl font-semibold flex flex-row justify-between">
+                        {props.title}
+                        <span className="text-left">
+                            <span className="italic text-base">{props.venue}</span>
+                            {props.special && (
+                                <span className="font-bold text-base">{` (${props.special})`}</span>
+                            )}
+                        </span>
+                    </div>
                     <PaperAuthors authors={props.authors} title={props.title} />
                 </div>
-                <div className="">
-                    <span className="italic text-sm">{props.venue}</span>
-                    {props.special && (
-                        <span className="font-bold text-sm">{` (${props.special})`}</span>
-                    )}
-                </div>
                 <PaperLinks
-                    className="flex flex-row pb-2"
+                    className="pb-2 text-base"
                     arxiv={props.arxiv}
                     projectPage={props.projectPage}
                     code={props.code}

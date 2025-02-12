@@ -9,7 +9,7 @@ export function PaperAuthors({ authors, title }: PaperAuthorsProps) {
     const hasCoauthorship = authors.some((author) => author.includes("*"));
 
     return (
-        <div className="text-sm">
+        <div className="text-base">
             {authors.map((author, index) => (
                 <span key={`${title}-author-${index}-p`}>
                     {index > 0 && ", "}

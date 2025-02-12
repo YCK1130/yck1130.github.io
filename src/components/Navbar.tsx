@@ -13,7 +13,7 @@ const Navbar = (props: NavbarProps) => {
     return (
         <motion.div
             className={
-                "fixed top-0 w-full shadow-lg bg-gray-200 dark:bg-gray-800 py-2 px-10 z-50 " +
+                "fixed top-0 w-full shadow-lg bg-gray-200 dark:bg-gray-800 py-1 px-10 z-50 " +
                 (props.className ?? "")
             }
             initial={{ y: 0 }}

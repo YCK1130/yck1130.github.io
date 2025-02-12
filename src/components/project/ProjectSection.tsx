@@ -16,7 +16,7 @@ export function ProjectSection({
 }: ProjectSectionProps) {
     return (
         <div
-            className={`my-2 col-span-5 text-justify group ${
+            className={`my-1 col-span-5 text-justify group ${
                 canFold && !expanded ? "hoverBlock px-0" : ""
             }`}
             onClick={toggle}
@@ -29,7 +29,7 @@ export function ProjectSection({
                         : "")
                 }
             >
-                <div className="text-xl col-span-1 select-none">{title}</div>
+                <div className="text-lg font-semibold col-span-1 select-none">{title}</div>
                 <Triangle
                     up={expanded}
                     className={
@@ -42,7 +42,7 @@ export function ProjectSection({
                 onClick={(e) => !expanded || e.stopPropagation()}
                 className={
                     "rounded-2xl rounded-t-none p-2 " +
-                    (expanded ? "shadow-inner bg-gray-200 dark:bg-gray-700" : "")
+                    (expanded ? "shadow-inner bg-gray-200 dark:bg-gray-700 pt-2" : "pt-0")
                 }
             >
                 {children}

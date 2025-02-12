@@ -13,13 +13,13 @@ export function ProjectHeader({ projectName, title, special, links, isDark }: Pr
     return (
         <div className="text-left w-full">
             <div className="place-content-start pt-2 px-2">
-                <div className="text-2xl inline">{projectName}</div>
-                <div className="text-sm inline">{special ? ` (${special})` : ""}</div>
+                <div className="text-xl font-semibold inline">{projectName}</div>
+                <div className="text-base inline">{special ? ` (${special})` : ""}</div>
             </div>
             <div className="flex flex-row px-2 justify-between">
                 {title && (
                     <div className="place-content-start">
-                        <div className="text-sm">{title}</div>
+                        <div className="text-base">{title}</div>
                     </div>
                 )}
                 <div className="flex flex-row pb-2 justify-evenly gap-1 items-center">

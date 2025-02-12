@@ -3,7 +3,7 @@ import Paper from "../components/paper";
 import { publications } from "../contents/pubs.ts";
 function Publications() {
     return (
-        <div className="flex flex-col justify-center items-center pb-5">
+        <div className="flex flex-col justify-center items-center">
             <h1 className="text-center">{"Publications"}</h1>
             {publications.map((pub, index) => (
                 <div

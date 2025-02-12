@@ -35,7 +35,7 @@ export default function Project(props: ProjectProps) {
     return (
         <div
             id={props.id}
-            className="flex w-full rounded-lg py-5 px-5 md:gap-5 md:flex-row max-md:flex-col max-md:gap-0"
+            className="flex w-full rounded-lg py-2 px-5 md:gap-5 md:flex-row max-md:flex-col max-md:gap-0"
         >
             <ProjectImage imgSrc={props.imgSrc} alt={props.alt} />
             <div className="w-full">
@@ -81,7 +81,7 @@ export default function Project(props: ProjectProps) {
                             ))
                         ) : (
                             <li>
-                                <TruncatedText text={props.contribution[0]} />
+                                <TruncatedText text={props.contribution[0]} className="text-base" />
                             </li>
                         )}
                     </ul>
