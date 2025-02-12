@@ -9,8 +9,8 @@ interface NavbarProps {
 }
 
 const Navbar = (props: NavbarProps) => {
-    const scrollDirection = useScrollDirection([10, 50]);
-
+    const { scrollDirection, lastScrollY } = useScrollDirection([10, 50]);
+    console.log(scrollDirection, lastScrollY);
     return (
         <motion.div
             className={
@@ -18,7 +18,7 @@ const Navbar = (props: NavbarProps) => {
                 (props.className ?? "")
             }
             initial={{ y: 0 }}
-            animate={{ y: scrollDirection === "down" ? -100 : 0 }}
+            animate={{ y: scrollDirection === "down" || lastScrollY > 100 ? -100 : 0 }}
             transition={{ type: "spring", stiffness: 50, damping: 20 }}
         >
             {props.children}

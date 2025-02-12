@@ -31,7 +31,7 @@ const useScrollDirection = (threshold: number | number[] = 10) => {
         };
     }, [handleScroll]);
 
-    return scrollDirection;
+    return { scrollDirection, lastScrollY };
 };
 
 export default useScrollDirection;
