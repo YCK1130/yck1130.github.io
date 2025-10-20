@@ -55,7 +55,7 @@ export function ProjectSection({
                 onClick={(e) => !expanded || e.stopPropagation()}
                 className={
                     "rounded-2xl rounded-t-none p-2 " +
-                    (expanded ? "shadow-inner bg-gray-200 dark:bg-gray-700 pt-2" : "pt-0")
+                    (expanded ? "shadow-inner pt-2" : "pt-0")
                 }
             >
                 {children}
