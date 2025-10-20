@@ -60,7 +60,7 @@ export default function Project(props: ProjectProps) {
                         <TruncatedText text={props.intro} />
                     )}
                 </ProjectSection>
-                <ProjectSection
+                {/* <ProjectSection
                     title="Contribution"
                     expanded={contribExpanded}
                     canFold={true}
@@ -85,7 +85,7 @@ export default function Project(props: ProjectProps) {
                             </li>
                         )}
                     </ul>
-                </ProjectSection>
+                </ProjectSection> */}
             </div>
         </div>
     );
