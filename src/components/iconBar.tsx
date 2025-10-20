@@ -18,7 +18,7 @@ export default function IconBar() {
                     alt="linkedin"
                 />
             </NewTabLink>
-            <NewTabLink href="/assets/cv.pdf">
+            <NewTabLink href="/assets/pdf/cv.pdf">
                 <img
                     className="logo size-9"
                     src={`docs-${isDark ? "white" : "black"}.png`}

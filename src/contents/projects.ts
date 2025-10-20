@@ -64,7 +64,7 @@ export const projects = [
         links: [
             {
                 name: "Poster",
-                url: "/assets/pdf/DLCV_final_poster.pdf",
+                url: "/assets/pdf/DLCV-poster.pdf",
             },
             {
                 name: "GitHub",
@@ -89,11 +89,32 @@ export const projects = [
             },
             {
                 name: "Essay",
-                url: "/assets/pdf/IEDA-essay.pdf",
+                url: "/assets/pdf/IEDA-report.pdf",
             },
             {
                 name: "GitHub",
                 url: "https://github.com/YCK1130/ICCAD-TBD",
+            },
+        ],
+    },
+    {
+        id: "CNS",
+        imgSrc: "/assets/image/projects/CNS.webp",
+        alt: "CNS-Final_Project",
+        projectName: "Collaborative Review for Intelligent Code Analysis using LLMs ",
+        title: "NTU CSIE7190: Cryptography and Network Security",
+        intro:
+            "Developed a multi-agent framework to identify vulnerabilities and mismatches between commit message and code changes, "+
+            "offering higher eﬀiciency and broader issue detection compared to traditional tools (e.g., CodeQL), achieving higher human preference scores on real-world datasets",
+        contribution: [],
+        links: [
+            {
+                name: "Essay",
+                url: "/assets/pdf/CNS-report.pdf",
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/YCK1130/CRITICAL",
             },
         ],
     },
@@ -109,7 +130,7 @@ export const projects = [
         links: [
             {
                 name: "Essay",
-                url: "/assets/pdf/RL_report.pdf",
+                url: "/assets/pdf/RL-report.pdf",
             },
             {
                 name: "GitHub",
