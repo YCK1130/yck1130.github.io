@@ -29,13 +29,13 @@ export default function Paper(props: PaperProps) {
                 <div className="place-content-start">
                     <div className="text-xl font-semibold flex flex-row justify-between">
                         {props.title}
-                        <span className="text-left">
-                            <span className="italic text-base">{props.venue}</span>
-                            {props.special && (
-                                <span className="font-bold text-base">{` (${props.special})`}</span>
-                            )}
-                        </span>
                     </div>
+                    <span className="text-right">
+                        <span className="italic text-base">{props.venue}</span>
+                        {props.special && (
+                            <span className="font-bold text-base">{` (${props.special})`}</span>
+                        )}
+                    </span>
                     <PaperAuthors authors={props.authors} title={props.title} />
                 </div>
                 <PaperLinks

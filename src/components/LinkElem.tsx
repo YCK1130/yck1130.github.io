@@ -28,6 +28,14 @@ export const LinkElem = React.memo(
                     alt="github"
                 />
             );
+        } else if (link.name === "Essay") {
+            content = (
+                <img
+                    className="logo size-5 essay"
+                    src={`docs-${isDark ? "white" : "black"}.png`}
+                    alt="essay"
+                />
+            );
         }
 
         return (

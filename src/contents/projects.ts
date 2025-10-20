@@ -1,7 +1,7 @@
 export const projects = [
     {
         id: "lightdance",
-        imgSrc: "/assets/projects/lightdance.webp",
+        imgSrc: "/assets/image/projects/lightdance.webp",
         alt: "lightdance",
         projectName: "NTUEE Light Dance",
         title: "Member of Raspberry Pi Team",
@@ -18,7 +18,7 @@ export const projects = [
         links: [
             {
                 name: "YouTube",
-                url: "https://www.youtube.com/watch?v=HviYqvcldPU",
+                url: "https://youtu.be/HviYqvcldPU",
             },
             {
                 name: "GitHub",
@@ -29,7 +29,7 @@ export const projects = [
     },
     {
         id: "GoogleHPS-Fire_Guardian",
-        imgSrc: "/assets/projects/googlehps.webp",
+        imgSrc: "/assets/image/projects/googlehps.webp",
         alt: "GoogleHPS-Fire_Guardian",
         projectName: "Fire Guardian",
         title: "Google 2023 Hardware Product Sprint",
@@ -45,6 +45,35 @@ export const projects = [
             {
                 name: "YouTube",
                 url: "https://youtu.be/n4am_cvueJw",
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/YCK1130/HPS2023-smoke-detector",
+            },
+        ],
+        // special: "Special",
+    },
+    {
+        id: "DLCV",
+        imgSrc: "/assets/image/projects/DLCV.webp",
+        alt: "DLCV-Final_Project",
+        projectName: "Multimodal Perception and Comprehension in Autonomous Driving",
+        title: "NTU CommE5052: Deep Learning for Computer Vision",
+        intro:
+            "Developed a 2-stage RAG-enhanced LLaVA system for autonomous driving perception, using segmentation and depth features to improve spatial understanding and scene comprehension",
+        contribution: [
+            "Designed and built the full-stack monitoring website for real-time fire alerts.",
+            "Developed MQTT-based device communication and RPi server management.",
+            "Implemented an efficient routing algorithm for emergency guidance.",
+        ],
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/YCK1130/DLCV-Fall-2024-Final",
+            },
+            {
+                name: "Essay",
+                url: "/assets/pdf/DLCV_final_poster.pdf",
             },
         ],
         // special: "Special",

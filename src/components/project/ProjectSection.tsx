@@ -20,6 +20,19 @@ export function ProjectSection({
                 canFold && !expanded ? "hoverBlock px-0" : ""
             }`}
             onClick={toggle}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' '){
+                    e.stopPropagation();
+                    toggle();
+                }
+                if (e.key === 'Escape' && expanded) {
+                    e.stopPropagation();
+                    toggle();   
+                }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-expanded={expanded}
         >
             <div
                 className={
