@@ -22,15 +22,15 @@ export interface ProjectProps {
 export default function Project(props: ProjectProps) {
     const { isDark } = useTheme();
     const [introExpanded, setIntroExpanded] = useState(false);
-    const [contribExpanded, setContribExpanded] = useState(false);
+    // const [contribExpanded, setContribExpanded] = useState(false);
 
     function toggleIntro() {
         setIntroExpanded((prev) => !prev);
     }
 
-    function toggleContrib() {
-        setContribExpanded((prev) => !prev);
-    }
+    // function toggleContrib() {
+    //     setContribExpanded((prev) => !prev);
+    // }
 
     return (
         <div
