@@ -19,7 +19,7 @@ export const publications = [
         arxiv: "https://arxiv.org/abs/2512.20052",
         projectPage: "",
         // code: "",
-        paper: "/assets/pdf/sof.pdf",
+        // paper: "/assets/pdf/sof.pdf",
         abstract: "We proposed a framework to learn reusable skills from action-free videos using optical flow as an action surrogate, "
             + "enabling multitask and long-horizon planning by translating flow-based skill plans into executable actions.",
         // special: "Oral",
