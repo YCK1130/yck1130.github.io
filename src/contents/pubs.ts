@@ -17,7 +17,7 @@ export const publications = [
             "Shao-Hua Sun",
         ],
         arxiv: "https://arxiv.org/abs/2512.20052",
-        projectPage: "",
+        projectPage: "https://sof-video.github.io/",
         // code: "",
         // paper: "/assets/pdf/sof.pdf",
         abstract: "We proposed a framework to learn reusable skills from action-free videos using optical flow as an action surrogate, "
