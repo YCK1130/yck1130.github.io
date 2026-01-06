@@ -16,7 +16,7 @@ export const publications = [
             "Min-Hung Chen",
             "Shao-Hua Sun",
         ],
-        arxiv: "",
+        arxiv: "https://arxiv.org/abs/2512.20052",
         projectPage: "",
         // code: "",
         paper: "/assets/pdf/sof.pdf",
@@ -33,7 +33,7 @@ export const publications = [
         arxiv: "https://arxiv.org/abs/2410.05429",
         projectPage: "https://nturobotlearninglab.github.io/DIFO/",
         // code: "",
-        paper: "https://arxiv.org/pdf/2410.05429",
+        // paper: "https://arxiv.org/pdf/2410.05429",
         abstract:
             "We proposed a learning from observation framework, DIFO, that integrates diffusion models to model state transitions and provide robust rewards to improve policy learning without action labels, "
             + "demonstrating superior performance and data efficiency over existing methods in various control tasks.",
