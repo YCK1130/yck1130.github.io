@@ -34,7 +34,7 @@ export default function Info() {
                     src="me-2024-crop.webp"
                     alt="me"
                 />
-                <p className="col-span-5 text-sm mt-5 hidden md:block">b10901027 [at] ntu.edu.tw</p>
+                <p className="col-span-5 text-sm mt-5 hidden md:block">ckyang [at] umich.edu</p>
             </div>
         </div>
     );
